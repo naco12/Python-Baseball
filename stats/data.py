@@ -21,3 +21,6 @@ games.loc[games['multi5']== '??', ['multi5']] = ''
 
 #Extract Identifiers. Each row of data should be associated with the proper game id
 identifiers = games['multi2'].str.extract(r'(.LS(\d{4})\d{5})')
+
+#ffill: propagate last valid observation forward to next valid backfill
+identifiers.fillna(method='ffill')
