@@ -23,4 +23,16 @@ games.loc[games['multi5']== '??', ['multi5']] = ''
 identifiers = games['multi2'].str.extract(r'(.LS(\d{4})\d{5})')
 
 #ffill: propagate last valid observation forward to next valid backfill
-identifiers.fillna(method='ffill')
+identifiers = identifiers.fillna(method='ffill')
+
+#renaming identifiers dataframe columns nAmateur
+identifiers.columns = ['game_id', 'year']
+
+#Concatenate identifier Columns
+games = pd.concat([games, identifiers], axis=1, sort=False)
+
+games = games.fillna('')
+
+games.loc[:, 'type'] = pd.Categorical(games.loc[:, 'type'])
+
+games.head()
