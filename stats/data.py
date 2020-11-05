@@ -16,5 +16,8 @@ for game_file in game_files:
     #concatenate Dataframes
     games = pd.concat(game_frames)
 
-# dataframe Cleaning
+# dataframe Cleaning. replacing ?? in column multi5 with ''
 games.loc[games['multi5']== '??', ['multi5']] = ''
+
+#Extract Identifiers. Each row of data should be associated with the proper game id
+identifiers = games['multi2'].str.extract(r'(.LS(\d{4})\d{5})')
