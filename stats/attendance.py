@@ -8,13 +8,13 @@ attendance = games.loc[games['multi2'] == 'attendance', ['year', 'multi3']]
 
 attendance.columns = ['year', 'attendance']
 
-attendance.loc[:,['attendance']] = pd.to_numeric(attendance.loc[:,['attendance']])
+attendance.loc[:,'attendance'] = pd.to_numeric(attendance.loc[:,'attendance'])
 
 attendance.plot(x='year', y='attendance', figsize=(15, 7), kind='bar')
 
 plt.xlabel('Year')
 plt.ylabel('Attendance')
 
-plt.axhline(dataframe['year'].mean(), label='year', linestyle='dashed', color='green')
+plt.axhline(attendance['year'].mean(), label='year', linestyle='dashed', color='green')
 
 plt.show()
