@@ -17,4 +17,4 @@ for game_file in game_files:
     games = pd.concat(game_frames)
 
 # dataframe Cleaning
-games.loc[[games[multi5]=='??'], [multi5]] = ['']
+#games.loc[[games['multi5']==??], ['multi5']] = ''
