@@ -14,3 +14,5 @@ r'^D(.*)': 'double',
 r'^T(.*)': 'triple',
 r'^HR(.*)': 'hr'
 }
+
+hit_type = hits['event'].replace(replacements, regex=True)
