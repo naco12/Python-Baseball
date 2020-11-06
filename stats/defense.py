@@ -18,5 +18,6 @@ events_plus_pa = pd.merge(events, pa, how='outer', left_on = ['year', 'game_id',
 #merge Team
 defense = pd.merge(events_plus_pa, info)
 
+
 defence.loc[:, 'DER'] = 1 - ((defense['H'] + defense['ROE']) / (defense['PA'] - defense['BB'] - defense['SO'] - defense['HBP'] - defense['HR']))
-defense.loc[:,'year'] = pd.to_numeric(defense.loc[:,'year'])
+defense.loc[:,'year'] = pd.to_numeric(defense['year'])
