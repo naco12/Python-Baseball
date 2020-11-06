@@ -16,3 +16,4 @@ r'^HR(.*)': 'hr'
 }
 
 hit_type = hits['event'].replace(replacements, regex=True)
+hits =hits.assign(hit_type=hit_type)
