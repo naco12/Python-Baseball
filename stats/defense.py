@@ -10,4 +10,4 @@ events = events.set_index(['year', 'game_id', 'team', 'event_type'])
 events = events.unstack().fillna(0).reset_index()
 events.columns = events.columns.droplevel()
 events.columns = ['year', 'game_id', 'team', 'BB', 'E', 'H', 'HBP', 'HR', 'ROE', 'SO']
-events = rename_axis(label=None, axis=1)
+events = events.rename_axis(label=None, axis=1)
