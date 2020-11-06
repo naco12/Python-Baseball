@@ -8,3 +8,9 @@ hits = plays.loc[plays['event'].str.contains('^(?:S(?!B)|D|T|HR)'), ['inning', '
 
 #convert column Type
 hits.loc[:, 'inning'] = pd.to_numeric(hits.loc[:, 'inning'])
+
+replacements = {r'^S(.*)': 'single'
+r'^D(.*)': 'double'
+r'^T(.*)': 'triple'
+r'^HR(.*)': 'hr'
+}
