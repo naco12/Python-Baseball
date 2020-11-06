@@ -14,3 +14,6 @@ events = events.rename_axis(None, axis='columns')
 
 #Merge Plate Appearances
 events_plus_pa = pd.merge(events, pa, how='outer', left_on = ['year', 'game_id', 'team'], right_on = ['year', 'game_id', 'team'])
+
+#merge Team
+defense = pd.merge(events_plus_pa, info)
