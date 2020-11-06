@@ -4,4 +4,4 @@ from frames import games, info, events
 
 plays = games.query("type=='play' & event != 'NP'")
 plays.columns = ['type', 'inning', 'team', 'player', 'count', 'pitches', 'event', 'game_id', 'year']
-pa = loc[plays['player'].shift() != plays['player'], ['year', 'game_id', 'inning', 'team', 'player']]
+pa = plays.loc[plays['player'].shift() != plays['player'], ['year', 'game_id', 'inning', 'team', 'player']]
