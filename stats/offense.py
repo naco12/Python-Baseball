@@ -7,4 +7,4 @@ plays.columns = ['type', 'inning', 'team', 'player', 'count', 'pitches', 'event'
 hits = plays.loc[plays['event'].str.contains('^(?:S(?!B)|D|T|HR)'), ['inning', 'event']]
 
 #convert column Type
-hits.loc[:, 'inning'].pd.to_numeric()
+pd.to_numeric(hits.loc[:, 'inning'])
