@@ -22,3 +22,5 @@ hits['hit_type'] = pd.Categorical(hits['hit_type'], ['single', 'double', 'triple
 hits = hits.sort_values(['inning', 'hit_type'])
 hits = hits.pivot(index='inning', columns='hit_type', values='count')
 hits.plot.bar(stacked=True)
+
+plt.show()
