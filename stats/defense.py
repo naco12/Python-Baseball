@@ -25,3 +25,7 @@ defense.loc[:, 'year'] = pd.to_numeric(defense['year'])
 
 der = defense.loc[defense['year'] >= 1978, ['year', 'defense', 'DER']]
 der = der.pivot(index='year', columns='defense', values='DER')
+
+#Plot formating xticks
+der.plot(x_compat=True, xticks=range(1978, 2018, 4), rot=45)
+plt.show()
